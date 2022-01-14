@@ -4,7 +4,7 @@
 Recently New York Times published an article with Spiral Graph representing the spread of Confirmed COVID-19 cases in US. The piece in question is titled [Here’s When We Expect Omicron to Peak.](https://www.nytimes.com/2022/01/06/opinion/omicron-covid-us.html) The opener image, which attracted a lot of attention on Twitter, shows the number of new COVID cases in the U.S. since the beginning of 2020. 
 
 
-![Original Spiral Graph by the New York Times](graphs/nyt_original.jpeg)
+![Original Spiral Graph by the New York Times](https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nyt_original.jpeg)
 
 ## Recreating the Graph with Python
 Despite the negative comments for spiral graphs to represent the data, i wanted to recreate the Graph, not in R like others but in python using only Matplotlib. I also wanted the option to add mutiple countries in Spiral Graph for Comparison. 
@@ -89,18 +89,18 @@ def get_graph_base(max_n: int,
 
 ```
 This will give us plain Spiral Graph without any covid Markers.
-![Plain Spiral Graph](graphs/plain_spiral_graph.jpg)
+![Plain Spiral Graph](https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/plain_spiral_graph.jpg)
 
 Now we have plain spiral graph, we can start adding the markers of covid new cases in any country. First we will add for US to check if we are getting similar graph as NY Times.
 <table><tr>
-<td> <img src="graphs/nyt_original.jpeg" alt="Drawing" style="width: 550px;"/> </td>
-<td> <img src="graphs/nystyle_usa_.jpg" alt="Drawing" style="width: 550px;"/> </td>
+<td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nyt_original.jpeg" alt="Drawing" style="width: 550px;"/> </td>
+<td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_usa_.jpg" alt="Drawing" style="width: 550px;"/> </td>
 </tr></table>
 
 Now we will add other country which is India in our case and try to plot spiral graph.
 <table><tr>
-<td> <img src="graphs/nystyle_usa_ind.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
-<td> <img src="graphs/nystyle_ind_bra.jpg" alt="Drawing" style="width: 550px;"/> </td>
+<td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_usa_ind.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
+<td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_ind_bra.jpg" alt="Drawing" style="width: 550px;"/> </td>
 </tr></table>
 <!-- ![Recreated Spiral Graph with india](graphs/nystyle_usa_ind.jpg) -->
 
@@ -108,6 +108,6 @@ Now we will add other country which is India in our case and try to plot spiral 
 
 I have also added one other type of Graph inspired by [souryashrestra](https://twitter.com/soustha/status/1480595666036350976) which follows lines instead of Fill.
 <table><tr>
-<td> <img src="graphs/nystyle_bar_usa.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
-<td> <img src="graphs/nystyle_bar_ind.jpg" alt="Drawing" style="width: 550px;"/> </td>
+<td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_bar_usa.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
+<td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_bar_ind.jpg" alt="Drawing" style="width: 550px;"/> </td>
 </tr></table>
