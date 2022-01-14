@@ -1,4 +1,4 @@
-from core.graphs import get_graph_base, spiral_graph_with_fill, spiral_graph_with_fill_single, spiral_graph_with_bars
+from core.graphs import get_graph_base, spiral_graph_with_fill, spiral_graph_with_fill_single, spiral_graph_with_bars, spiral_graph
 from core.data_preprocessing import download_covid_data, preprocess_data
 
 import pandas as pd
@@ -15,12 +15,12 @@ def create_graph(isos: list,
         dfs.append(pd.read_csv(f"data/{iso}_Data.csv"))
     
     fig = spiral_graph_with_fill(dfs,col = col, refactor=refactor, isos=isos, colors = colors, line_color = line_color)
-    fig.savefig("graphs/sample.jpg")
+    fig.savefig("graphs/nystyle_usa_.jpg")
 
 if __name__ == '__main__':
-    isos = ["USA", "IND"]
+    isos = ["USA"]
     path = "/home/lenovo_e14/Documents/RKTN/spiral/data/Covid_Data.csv"
     
     download_covid_data(path)
     preprocess_data(path,isos)
-    create_graph(isos)
+    create_graph(isos, colors=["#f2665c"])

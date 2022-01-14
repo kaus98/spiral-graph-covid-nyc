@@ -65,7 +65,7 @@ def get_graph_base(max_n: int,
     angles = pd.Series(np.linspace(0, 2*np.pi*(max_n/365) , max_n))
     radius = pd.Series(list(range(max_n))) + offset_radius
     
-    fig = plt.figure(figsize=(14,18)) 
+    fig = plt.figure(figsize=(14,15)) 
     ax = fig.add_subplot(111, polar=True)
     
     ax.set_theta_direction(-1) # Make Graph go Clockwise 
@@ -82,7 +82,9 @@ def get_graph_base(max_n: int,
     ancor_text = AnchoredText(ancor_text, loc = "lower right", prop=dict(alpha=0.4)) # Adding the Watermark Text
     ax.add_artist(ancor_text)
     
-    ax.set_title("COVID-19 Cases (11/01/2022)", y = 1.05, fontdict={"fontsize":26, "fontname": "impact"}) # Setting the title
-
+    ax.set_title("COVID-19 Cases (11/01/2022)", y = 1.08, fontdict={"fontsize":26, "fontname": "impact"}) # Setting the Title
     return fig, ax, angles, radius
+
 ```
+This will give us plain Spiral Graph without any covid Markers.
+![Plain Spiral Graph](graphs/plain_spiral_graph.jpg)

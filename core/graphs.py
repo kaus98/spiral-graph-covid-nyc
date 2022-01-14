@@ -3,7 +3,7 @@ import numpy as np
 import os, json
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import text
-plt.style.use("ggplot")
+plt.style.use("fivethirtyeight")
 
 import matplotlib.cm as cm 
 from matplotlib.offsetbox import AnchoredText
@@ -16,7 +16,7 @@ def get_graph_base(max_n: int,
     angles = pd.Series(np.linspace(0, 2*np.pi*(max_n/365) , max_n))
     radius = pd.Series(list(range(max_n))) + offset_radius
     
-    fig = plt.figure(figsize=(14,18)) 
+    fig = plt.figure(figsize=(14,17.4)) 
     ax = fig.add_subplot(111, polar=True)
     
     ax.set_theta_direction(-1) # Make Graph go Clockwise 
@@ -28,12 +28,12 @@ def get_graph_base(max_n: int,
     ax.grid(True, color = "#000000", linewidth = "0.1", linestyle = "solid" )
     
     # Making the Base Spiral Line 
-    ax.plot(angles, radius, "--", color = line_color, linewidth = "1.2", label = "Days Since 2020/01/01")
+    ax.plot(angles, radius, color = line_color, linewidth = "1.5", label = "Days Since 2020/01/01")
     ax.legend(loc = "upper right")
     ancor_text = AnchoredText(ancor_text, loc = "lower right", prop=dict(alpha=0.4)) # Adding the Watermark Text
     ax.add_artist(ancor_text)
     
-    ax.set_title("COVID-19 Cases (11/01/2022)", y = 1.05, fontdict={"fontsize":26, "fontname": "impact"}) # Setting the Title
+    ax.set_title("COVID-19 Cases (11/01/2022)", y = 1.08, fontdict={"fontsize":26, "fontname": "impact"}) # Setting the Title
     return fig, ax, angles, radius
 
 def spiral_graph_with_fill(dfs: list,
@@ -76,7 +76,19 @@ def spiral_graph_with_fill_single(dfs: list,
     
     return fig
 
+def spiral_graph(dfs: list,
+                           col: str, 
+                           refactor: float,
+                           colors: list,
+                           isos: list, 
+                           line_color: str
+                           ):
+    
+    assert len(dfs) == len(colors)
+    max_n = dfs[0]["days_passed"].max()+1
+    fig, ax, angles, radius = get_graph_base(max_n, line_color)
 
+    return fig
         
 def spiral_graph_with_bars(dfs: list,
                            col: str, 
