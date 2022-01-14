@@ -4,7 +4,6 @@ import os, json
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import text
 plt.style.use("ggplot")
-
 import matplotlib.cm as cm 
 from matplotlib.offsetbox import AnchoredText
 
@@ -18,7 +17,7 @@ def get_graph_base(max_n: int,
     
     fig = plt.figure(figsize=(14,17.4), facecolor='white') 
     ax = fig.add_subplot(111, polar=True)
-    
+    ax.set_facecolor('white')
     ax.set_theta_direction(-1) # Make Graph go Clockwise 
     ax.set_theta_offset(np.pi/2.0) # Add Offset of 90 Deg
     ax.set_xticks(np.deg2rad(months/months.max()*360).values) 
@@ -53,6 +52,7 @@ def spiral_graph_with_fill(dfs: list,
         ax.fill_between(angles, radius-cases_factor, radius+cases_factor, alpha = 0.4, color = color, label = f"New COVID-19 Cases\n{cc}")
         ax.plot(angles, radius-cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
         ax.plot(angles, radius+cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
+    plt.tight_layout(pad=3.4)
     
     return fig
 
