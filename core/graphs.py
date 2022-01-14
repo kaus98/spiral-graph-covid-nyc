@@ -28,7 +28,7 @@ def get_graph_base(max_n: int,
     
     # Making the Base Spiral Line 
     ax.plot(angles, radius, color = line_color, linewidth = "1.5", label = "Days Since 2020/01/01")
-    ax.legend(loc = "upper right")
+    
     ancor_text = AnchoredText(ancor_text, loc = "lower right", prop=dict(alpha=0.4)) # Adding the Watermark Text
     ax.add_artist(ancor_text)
     
@@ -53,7 +53,7 @@ def spiral_graph_with_fill(dfs: list,
         ax.plot(angles, radius-cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
         ax.plot(angles, radius+cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
     plt.tight_layout(pad=3.4)
-    
+    ax.legend(loc = "upper right")
     return fig
 
         

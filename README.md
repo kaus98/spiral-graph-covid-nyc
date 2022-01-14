@@ -94,3 +94,6 @@ Now we have plain spiral graph, we can start adding the markers of covid new cas
 <td> <img src="graphs/nyt_original.jpeg" alt="Drawing" style="width: 550px;"/> </td>
 <td> <img src="graphs/nystyle_usa_.jpg" alt="Drawing" style="width: 550px;"/> </td>
 </tr></table>
+
+Now we will add other country which is India in our case and try to plot spiral graph.
+![Recreated Spiral Graph with india](graphs/nystyle_usa_ind.jpg)
