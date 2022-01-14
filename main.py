@@ -6,7 +6,7 @@ import pandas as pd
 
 def create_graph(isos: list,
                  col: str = "new_cases_smoothed",
-                 refactor: float = 0.0008,
+                 refactor: float = 0.0005,
                  colors: list = ["#6daa6b", "#f2665c"],
                  line_color: str = "#2A363B"
                  ):

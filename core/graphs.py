@@ -3,7 +3,7 @@ import numpy as np
 import os, json
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import text
-plt.style.use("fivethirtyeight")
+plt.style.use("ggplot")
 
 import matplotlib.cm as cm 
 from matplotlib.offsetbox import AnchoredText
@@ -16,7 +16,7 @@ def get_graph_base(max_n: int,
     angles = pd.Series(np.linspace(0, 2*np.pi*(max_n/365) , max_n))
     radius = pd.Series(list(range(max_n))) + offset_radius
     
-    fig = plt.figure(figsize=(14,17.4)) 
+    fig = plt.figure(figsize=(14,17.4), facecolor='white') 
     ax = fig.add_subplot(111, polar=True)
     
     ax.set_theta_direction(-1) # Make Graph go Clockwise 
