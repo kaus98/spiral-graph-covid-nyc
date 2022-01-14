@@ -88,3 +88,12 @@ def get_graph_base(max_n: int,
 ```
 This will give us plain Spiral Graph without any covid Markers.
 ![Plain Spiral Graph](graphs/plain_spiral_graph.jpg)
+
+Now we have plain spiral graph, we can start adding the markers of covid new cases in any country. First we will add for US to check if we are getting similar graph as NY Times.
+<table><tr>
+<td> <img src="graphs/nyt_original.jpeg" alt="Drawing" style="width: 250px;"/> </td>
+<td> <img src="graphs/nystyle_usa_.jpg" alt="Drawing" style="width: 250px;"/> </td>
+</tr></table>
+label 1 | label 2
+--- | ---
+![Original Spiral Graph by the New York Times](graphs/nyt_original.jpeg) | ![Plain Spiral Graph](graphs/nystyle_usa_.jpg)
