@@ -1,3 +1,4 @@
+from cProfile import label
 import pandas as pd
 import numpy as np
 import os, json
@@ -110,7 +111,7 @@ def spiral_graph_with_bars(dfs: list,
         cases_factor = (df[col])*refactor
         # ax.fill_between(angles, radius, radius+cases_factor, alpha = 0.4, color = color, label = f"New COVID-19 Cases\n{cc}")
         # ax.scatter(angles, radius+cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
-        ax.plot(angles, radius+cases_factor, ".", color = color, alpha = 0.8, linewidth = "0.9")
+        ax.plot(angles, radius+cases_factor, ".", color = color, alpha = 0.8, linewidth = "0.9", label = "COVID Cases \n{cc}")
         for ag, rd, cf  in zip(angles, radius, cases_factor):
             
             ax.plot([ag, ag], [rd, rd+cf],color = color, alpha = 0.8, linewidth = "0.9")
