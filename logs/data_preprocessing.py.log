@@ -1,0 +1,20 @@
+2022-01-15 00:09:38,878 - logs/data_preprocessing.py.log - INFO - 48 - data_preprocessing.py - <module> - Program Started ..
+2022-01-15 00:09:38,878 - logs/data_preprocessing.py.log - INFO - 19 - data_preprocessing.py - download_covid_data - Starting to Download on path : /home/lenovo_e14/Documents/RKTN/spiral/data/Covid_Data.csv
+2022-01-15 00:14:18,540 - logs/data_preprocessing.py.log - INFO - 19 - data_preprocessing.py - download_covid_data - Deleting the Existing File from Path : /home/lenovo_e14/Documents/RKTN/spiral/data/Covid_Data.csv
+2022-01-15 00:14:18,541 - logs/data_preprocessing.py.log - INFO - 22 - data_preprocessing.py - download_covid_data - Starting to Download on path : /home/lenovo_e14/Documents/RKTN/spiral/data/Covid_Data.csv
+2022-01-15 00:14:27,784 - logs/data_preprocessing.py.log - INFO - 31 - data_preprocessing.py - preprocess_data - Starting to Preprocess
+2022-01-15 00:14:28,789 - logs/data_preprocessing.py.log - INFO - 37 - data_preprocessing.py - preprocess_data - Preprocessing for Country : USA
+2022-01-15 00:15:53,927 - logs/data_preprocessing.py.log - INFO - 19 - data_preprocessing.py - download_covid_data - Deleting the Existing File from Path : /home/lenovo_e14/Documents/RKTN/spiral/data/Covid_Data.csv
+2022-01-15 00:15:53,928 - logs/data_preprocessing.py.log - INFO - 22 - data_preprocessing.py - download_covid_data - Starting to Download on path : /home/lenovo_e14/Documents/RKTN/spiral/data/Covid_Data.csv
+2022-01-15 00:16:01,679 - logs/data_preprocessing.py.log - INFO - 31 - data_preprocessing.py - preprocess_data - Starting to Preprocess
+2022-01-15 00:16:02,685 - logs/data_preprocessing.py.log - INFO - 37 - data_preprocessing.py - preprocess_data - Preprocessing for Country : USA
+2022-01-15 00:16:58,079 - logs/data_preprocessing.py.log - INFO - 19 - data_preprocessing.py - download_covid_data - Deleting the Existing File from Path : /home/lenovo_e14/Documents/RKTN/spiral/data/Covid_Data.csv
+2022-01-15 00:16:58,081 - logs/data_preprocessing.py.log - INFO - 22 - data_preprocessing.py - download_covid_data - Starting to Download on path : /home/lenovo_e14/Documents/RKTN/spiral/data/Covid_Data.csv
+2022-01-15 00:17:20,247 - logs/data_preprocessing.py.log - INFO - 22 - data_preprocessing.py - download_covid_data - Starting to Download on path : /home/lenovo_e14/Documents/RKTN/spiral/data/Covid_Data.csv
+2022-01-15 00:17:29,188 - logs/data_preprocessing.py.log - INFO - 31 - data_preprocessing.py - preprocess_data - Starting to Preprocess
+2022-01-15 00:17:30,923 - logs/data_preprocessing.py.log - INFO - 37 - data_preprocessing.py - preprocess_data - Preprocessing for Country : USA
+2022-01-15 00:18:39,847 - logs/data_preprocessing.py.log - INFO - 31 - data_preprocessing.py - preprocess_data - Starting to Preprocess
+2022-01-15 00:18:40,808 - logs/data_preprocessing.py.log - INFO - 37 - data_preprocessing.py - preprocess_data - Preprocessing for Country : USA
+2022-01-15 00:18:40,842 - logs/data_preprocessing.py.log - INFO - 50 - data_preprocessing.py - preprocess_data - Saving the File
+2022-01-15 00:18:40,853 - logs/data_preprocessing.py.log - INFO - 37 - data_preprocessing.py - preprocess_data - Preprocessing for Country : IND
+2022-01-15 00:18:40,875 - logs/data_preprocessing.py.log - INFO - 50 - data_preprocessing.py - preprocess_data - Saving the File
