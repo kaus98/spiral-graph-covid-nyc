@@ -1,4 +1,6 @@
 # Recreating the New York Times Covid-19 Spiral Graph in Python
+## [Covid Visualizations and Predictions](https://github.com/terminate9298/Corona-Visualization-and-Prediction)
+
 Recently New York Times published an article with Spiral Graph representing the spread of Confirmed COVID-19 cases in US. The piece in question is titled [Here’s When We Expect Omicron to Peak.](https://www.nytimes.com/2022/01/06/opinion/omicron-covid-us.html) The opener image, which attracted a lot of attention on Twitter, shows the number of new COVID cases in the U.S. since the beginning of 2020. 
 
 
@@ -101,6 +103,7 @@ Now we will add other country which is India in our case and try to plot spiral 
 <td> <img src="graphs/nystyle_ind_bra.jpg" alt="Drawing" style="width: 550px;"/> </td>
 </tr></table>
 <!-- ![Recreated Spiral Graph with india](graphs/nystyle_usa_ind.jpg) -->
+
 ## Great. It Works.
 
 I have also added one other type of Graph inspired by [souryashrestra](https://twitter.com/soustha/status/1480595666036350976) which follows lines instead of Fill.
