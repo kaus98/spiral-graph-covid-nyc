@@ -96,4 +96,15 @@ Now we have plain spiral graph, we can start adding the markers of covid new cas
 </tr></table>
 
 Now we will add other country which is India in our case and try to plot spiral graph.
-![Recreated Spiral Graph with india](graphs/nystyle_usa_ind.jpg)
+<table><tr>
+<td> <img src="graphs/nystyle_usa_ind.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
+<td> <img src="graphs/nystyle_ind_bra.jpg" alt="Drawing" style="width: 550px;"/> </td>
+</tr></table>
+<!-- ![Recreated Spiral Graph with india](graphs/nystyle_usa_ind.jpg) -->
+## Great. It Works.
+
+I have also added one other type of Graph inspired by [souryashrestra](https://twitter.com/soustha/status/1480595666036350976) which follows lines instead of Fill.
+<table><tr>
+<td> <img src="graphs/nystyle_bar_usa.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
+<td> <img src="graphs/nystyle_bar_ind.jpg" alt="Drawing" style="width: 550px;"/> </td>
+</tr></table>

@@ -22,8 +22,10 @@ def get_graph_base(max_n: int,
     ax.set_theta_offset(np.pi/2.0) # Add Offset of 90 Deg
     ax.set_xticks(np.deg2rad(months/months.max()*360).values) 
     ax.set_xticklabels([ 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec','Jan']) # Setting the Labels for X Ticks
-    ax.set_yticks([0+offset_radius,365+offset_radius, 2*365+offset_radius]) # Adding the Y-Ticks for Each Year
-    ax.set_yticklabels(["", "", ""])    
+    ax.set_yticks([]) # Adding the Y-Ticks for Each Year
+    ax.set_yticklabels([])   
+    # ax.set_yticks([0+offset_radius,365+offset_radius, 2*365+offset_radius]) # Adding the Y-Ticks for Each Year
+    # ax.set_yticklabels(["", "", ""])    
     ax.grid(True, color = "#000000", linewidth = "0.1", linestyle = "solid" )
     
     # Making the Base Spiral Line 
@@ -49,7 +51,7 @@ def spiral_graph_with_fill(dfs: list,
     
     for df, color, cc in zip(dfs, colors, isos):
         cases_factor = (df[col]/2)*refactor
-        ax.fill_between(angles, radius-cases_factor, radius+cases_factor, alpha = 0.4, color = color, label = f"New COVID-19 Cases\n{cc}")
+        ax.fill_between(angles, radius-cases_factor, radius+cases_factor, alpha = 0.4, color = color, label = f"COVID'19 Cases \n{cc}")
         ax.plot(angles, radius-cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
         ax.plot(angles, radius+cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
     plt.tight_layout(pad=3.4)
@@ -73,7 +75,8 @@ def spiral_graph_with_fill_single(dfs: list,
         cases_factor = (df[col])*refactor
         ax.fill_between(angles, radius, radius+cases_factor, alpha = 0.4, color = color, label = f"New COVID-19 Cases\n{cc}")
         ax.plot(angles, radius+cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
-    
+    plt.tight_layout(pad=3.4)
+    ax.legend(loc = "upper right")
     return fig
 
 def spiral_graph(dfs: list,
@@ -87,7 +90,8 @@ def spiral_graph(dfs: list,
     assert len(dfs) == len(colors)
     max_n = dfs[0]["days_passed"].max()+1
     fig, ax, angles, radius = get_graph_base(max_n, line_color)
-
+    plt.tight_layout(pad=3.4)
+    ax.legend(loc = "upper right")
     return fig
         
 def spiral_graph_with_bars(dfs: list,
@@ -105,8 +109,13 @@ def spiral_graph_with_bars(dfs: list,
     for df, color, cc in zip(dfs, colors, isos):
         cases_factor = (df[col])*refactor
         # ax.fill_between(angles, radius, radius+cases_factor, alpha = 0.4, color = color, label = f"New COVID-19 Cases\n{cc}")
-        ax.scatter(angles, radius+cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
-    
+        # ax.scatter(angles, radius+cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
+        ax.plot(angles, radius+cases_factor, ".", color = color, alpha = 0.8, linewidth = "0.9")
+        for ag, rd, cf  in zip(angles, radius, cases_factor):
+            
+            ax.plot([ag, ag], [rd, rd+cf],color = color, alpha = 0.8, linewidth = "0.9")
+    plt.tight_layout(pad=3.4)
+    ax.legend(loc = "upper right")
     return fig
 
 
