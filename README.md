@@ -131,3 +131,10 @@ Much like the previous Graph we can create double sided bar graph which can show
 <td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_2bar_usa_ind.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
 <td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_2bar_ind_bra.jpg" alt="Drawing" style="width: 550px;"/> </td>
 </tr></table>
+
+### Double Sided Graph with Confirmed and Deceased Cases
+We can also represent 2 data on each side of Line representing New Confirmed and Deceased Cases for one Country.
+<table><tr>
+<td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_2fill_ind.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
+<td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_2fill_usa.jpg" alt="Drawing" style="width: 550px;"/> </td>
+</tr></table>

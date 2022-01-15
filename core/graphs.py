@@ -59,6 +59,33 @@ def spiral_graph_with_fill(dfs: list,
     ax.legend(loc = "upper right")
     return fig
 
+def spiral_graph_with_fill_2_sides(dfs: list,
+                           cols: list , 
+                           refactors: list,
+                           colors: list,
+                           isos: list, 
+                           line_color: str
+                           ):
+    
+    # assert len(dfs) == len(colors)
+    max_n = dfs[0]["days_passed"].max()+1
+    fig, ax, angles, radius = get_graph_base(max_n, line_color)
+    
+    if True:
+        df, col, refactor, color, cc = dfs[0], cols[0], refactors[0], colors[0], isos[0]
+        cases_factor = (df[col]/2)*refactor
+        ax.fill_between(angles, radius, radius+cases_factor, alpha = 0.4, color = color, label = f"COVID'19 Cases \n{cc}")
+        ax.plot(angles, radius+cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
+        
+    if True:
+        df, col, refactor, color, cc = dfs[0], cols[1], refactors[1], colors[1], isos[0]
+        cases_factor = (df[col]/2)*refactor
+        ax.fill_between(angles, radius-cases_factor, radius, alpha = 0.4, color = color, label = f"COVID'19 Deceased Cases \n{cc}")
+        ax.plot(angles, radius-cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
+          
+    plt.tight_layout(pad=3.4)
+    ax.legend(loc = "upper right")
+    return fig
         
 def spiral_graph_with_fill_single(dfs: list,
                            col: str, 
