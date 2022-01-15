@@ -12,7 +12,8 @@ from matplotlib.offsetbox import AnchoredText
 def get_graph_base(max_n: int, 
                    line_color: str, 
                    offset_radius: int = 100,
-                   ancor_text: str = "By: kaus98"):
+                   ancor_text: str = "By: kaus98", 
+                   date_today: str = None):
     months = pd.Series([31, 28.25, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]).cumsum() #Calendar to set angles for each month
     angles = pd.Series(np.linspace(0, 2*np.pi*(max_n/365) , max_n))
     radius = pd.Series(list(range(max_n))) + offset_radius
@@ -26,8 +27,8 @@ def get_graph_base(max_n: int,
     ax.set_xticklabels([ 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec','Jan']) # Setting the Labels for X Ticks
     ax.set_yticks([]) # Adding the Y-Ticks for Each Year
     ax.set_yticklabels([])   
-    # ax.set_yticks([0+offset_radius,365+offset_radius, 2*365+offset_radius]) # Adding the Y-Ticks for Each Year
-    # ax.set_yticklabels(["", "", ""])    
+    ax.set_yticks([0+offset_radius,365+offset_radius, 2*365+offset_radius]) # Adding the Y-Ticks for Each Year
+    ax.set_yticklabels(["", "", ""])    
     ax.grid(True, color = "#000000", linewidth = "0.1", linestyle = "solid" )
     
     # Making the Base Spiral Line 
@@ -35,7 +36,7 @@ def get_graph_base(max_n: int,
     
     ancor_text = AnchoredText(ancor_text, loc = "lower right", prop=dict(alpha=0.4)) # Adding the Watermark Text
     ax.add_artist(ancor_text)
-    date_today = datetime.today().strftime("%Y/%m/%d")
+    if date_today is None: date_today = datetime.today().strftime("%Y/%m/%d")
     ax.set_title(f"COVID-19 Cases ({date_today})", y = 1.08, fontdict={"fontsize":26, "fontname": "impact"}) # Setting the Title
     return fig, ax, angles, radius
 
@@ -44,12 +45,13 @@ def spiral_graph_with_fill(dfs: list,
                            refactor: float,
                            colors: list,
                            isos: list, 
-                           line_color: str
+                           line_color: str,
+                           date_today: str = None
                            ):
     
     assert len(dfs) == len(colors)
     max_n = dfs[0]["days_passed"].max()+1
-    fig, ax, angles, radius = get_graph_base(max_n, line_color)
+    fig, ax, angles, radius = get_graph_base(max_n, line_color, date_today = date_today)
     
     for df, color, cc in zip(dfs, colors, isos):
         cases_factor = (df[col]/2)*refactor

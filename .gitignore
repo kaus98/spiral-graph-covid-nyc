@@ -6,3 +6,6 @@ data/Covid_Data.csv
 data/IND_Data.csv
 data/USA_Data.csv
 data/BRA_Data.csv
+
+graphs/video_india/
+graphs/video_usa/
