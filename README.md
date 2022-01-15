@@ -138,3 +138,12 @@ We can also represent 2 data on each side of Line representing New Confirmed and
 <td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_2fill_ind.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
 <td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_2fill_usa.jpg" alt="Drawing" style="width: 550px;"/> </td>
 </tr></table>
+
+### Create the video from Graphs
+Since we have already create graph, we can create progression video with time. We can use ffmpeg defult command to make Video from Images.
+``` shell
+ffmpeg -r 25 -pattern_type glob -i 'graphs/video_india/*.jpg' -vb 2M -vcodec mpeg4 -y movie_india.mp4
+```
+You can checkout sample Video from these Links.
+![Progression Video for India](https://github.com/kaus98/spiral-graph-covid-nyc/blob/main/movie_india.mp4)
+![Progression Video for USA](https://github.com/kaus98/spiral-graph-covid-nyc/blob/main/movie_usa.mp4)
