@@ -2,6 +2,7 @@ from cProfile import label
 import pandas as pd
 import numpy as np
 import os, json
+from datetime import datetime
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import text
 plt.style.use("ggplot")
@@ -34,8 +35,8 @@ def get_graph_base(max_n: int,
     
     ancor_text = AnchoredText(ancor_text, loc = "lower right", prop=dict(alpha=0.4)) # Adding the Watermark Text
     ax.add_artist(ancor_text)
-    
-    ax.set_title("COVID-19 Cases (11/01/2022)", y = 1.08, fontdict={"fontsize":26, "fontname": "impact"}) # Setting the Title
+    date_today = datetime.today().strftime("%Y/%m/%d")
+    ax.set_title(f"COVID-19 Cases ({date_today})", y = 1.08, fontdict={"fontsize":26, "fontname": "impact"}) # Setting the Title
     return fig, ax, angles, radius
 
 def spiral_graph_with_fill(dfs: list,
