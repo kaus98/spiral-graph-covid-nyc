@@ -1,5 +1,7 @@
+
 # Recreating the New York Times Covid-19 Spiral Graph in Python
-## [Covid Visualizations and Predictions](https://github.com/terminate9298/Corona-Visualization-and-Prediction)
+#### [Git Link](https://github.com/kaus98/spiral-graph-covid-nyc)
+#### [Covid Visualizations and Predictions](https://github.com/terminate9298/Corona-Visualization-and-Prediction)
 
 Recently New York Times published an article with Spiral Graph representing the spread of Confirmed COVID-19 cases in US. The piece in question is titled [Here’s When We Expect Omicron to Peak.](https://www.nytimes.com/2022/01/06/opinion/omicron-covid-us.html) The opener image, which attracted a lot of attention on Twitter, shows the number of new COVID cases in the U.S. since the beginning of 2020. 
 
@@ -16,9 +18,11 @@ Coronavirus cases all around the worlds. We will also add the options to plot ot
 
 ## Downloading the Dataset
 To Download the Dataset, we can use Wget python Library or manually [download](https://covid.ourworldindata.org/data/owid-covid-data.csv) and place the file in working directory. 
+
 ``` python
 wget.download('https://covid.ourworldindata.org/data/owid-covid-data.csv', "data/Covid_Data.csv")
 ```
+
 ## Preprocessing the Data
 Since the original chart starts on January 1st, 2020, while the first
 cases for each country are presented on different dates, we add all
@@ -58,6 +62,8 @@ We will start with building very simple Spiral graph in python which will act as
 * We will add the Y Ticks for starting of each year.
 * We will also add Watermark to add your name on bottom right.
 * Offset is added to not start the graph from zero.
+With code you can Change the Ancor with your name
+
 ``` python
 def get_graph_base(max_n: int, 
                    line_color: str, 
@@ -88,26 +94,40 @@ def get_graph_base(max_n: int,
     return fig, ax, angles, radius
 
 ```
+
 This will give us plain Spiral Graph without any covid Markers.
 ![Plain Spiral Graph](https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/plain_spiral_graph.jpg)
 
 Now we have plain spiral graph, we can start adding the markers of covid new cases in any country. First we will add for US to check if we are getting similar graph as NY Times.
+
 <table><tr>
 <td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nyt_original.jpeg" alt="Drawing" style="width: 550px;"/> </td>
 <td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_usa_.jpg" alt="Drawing" style="width: 550px;"/> </td>
 </tr></table>
 
+
 Now we will add other country which is India in our case and try to plot spiral graph.
+
 <table><tr>
 <td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_usa_ind.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
 <td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_ind_bra.jpg" alt="Drawing" style="width: 550px;"/> </td>
 </tr></table>
-<!-- ![Recreated Spiral Graph with india](graphs/nystyle_usa_ind.jpg) -->
 
-## Great. It Works.
 
+#### Great. It Works.
+We can also create some other similar graphs that represent data in Sprial format but to much clear extend.
+
+### Spiral with Single Bar Graph
 I have also added one other type of Graph inspired by [souryashrestra](https://twitter.com/soustha/status/1480595666036350976) which follows lines instead of Fill.
+
 <table><tr>
 <td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_bar_usa.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
 <td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_bar_ind.jpg" alt="Drawing" style="width: 550px;"/> </td>
+</tr></table>
+
+### Spiral with Double Bar Graph
+Much like the previous Graph we can create double sided bar graph which can show 2 different countries stats at each of side.
+<table><tr>
+<td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_2bar_usa_ind.jpg" alt="Recreated Spiral Graph with india" style="width: 550px;"/> </td>
+<td> <img src="https://raw.githubusercontent.com/kaus98/spiral-graph-covid-nyc/main/graphs/nystyle_2bar_ind_bra.jpg" alt="Drawing" style="width: 550px;"/> </td>
 </tr></table>

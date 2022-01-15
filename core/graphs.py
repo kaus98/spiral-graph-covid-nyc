@@ -111,7 +111,7 @@ def spiral_graph_with_bars(dfs: list,
         cases_factor = (df[col])*refactor
         # ax.fill_between(angles, radius, radius+cases_factor, alpha = 0.4, color = color, label = f"New COVID-19 Cases\n{cc}")
         # ax.scatter(angles, radius+cases_factor, color = color, alpha = 0.8, linewidth = "0.9")
-        ax.plot(angles, radius+cases_factor, ".", color = color, alpha = 0.8, linewidth = "0.9", label = "COVID Cases \n{cc}")
+        ax.plot(angles, radius+cases_factor, ".", color = color, alpha = 0.8, linewidth = "0.9", label = f"COVID Cases \n{cc}")
         for ag, rd, cf  in zip(angles, radius, cases_factor):
             
             ax.plot([ag, ag], [rd, rd+cf],color = color, alpha = 0.8, linewidth = "0.9")
@@ -120,5 +120,42 @@ def spiral_graph_with_bars(dfs: list,
     return fig
 
 
+def spiral_graph_with_bars_2_sides(dfs: list,
+                           col: str, 
+                           refactor: float,
+                           colors: list,
+                           isos: list, 
+                           line_color: str
+                           ):
+    
+    assert len(dfs) == len(colors)
+    assert len(dfs) == 2
+    
+    max_n = dfs[0]["days_passed"].max()+1
+    fig, ax, angles, radius = get_graph_base(max_n, line_color)
+    
+    df = dfs[0]
+    color = colors[0]
+    cc = isos[0]
+    
+    cases_factor = (df[col])*refactor
+    ax.plot(angles, radius+cases_factor, ".", color = color, alpha = 0.8, linewidth = "0.9", label = f"COVID Cases \n{cc}")
+    for ag, rd, cf  in zip(angles, radius, cases_factor):
+        ax.plot([ag, ag], [rd, rd+cf],color = color, alpha = 0.8, linewidth = "0.9")
+            
+    df = dfs[1]
+    color = colors[1]
+    cc = isos[1]
+    
+    cases_factor = (df[col])*refactor
+    ax.plot(angles, radius-cases_factor, ".", color = color, alpha = 0.8, linewidth = "0.9", label = f"COVID Cases \n{cc}")
+    for ag, rd, cf  in zip(angles, radius, cases_factor):
+        ax.plot([ag, ag], [rd, rd-cf],color = color, alpha = 0.8, linewidth = "0.9")
+            
+            
+                  
+    plt.tight_layout(pad=3.4)
+    ax.legend(loc = "upper right")
+    return fig
 
         
