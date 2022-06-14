@@ -45,8 +45,8 @@ def preprocess_data(path: str,
         
         country_data = pd.concat([temp, country_data[temp.columns]], axis = 0)
         country_data['date'] = pd.to_datetime(country_data['date'])
-        country_data['days_passed'] = (country_data['date'] - pd.to_datetime(start_date))/86400000000000
-        country_data['days_passed'] = country_data['days_passed'].astype(int)
+        country_data['days_passed'] = (country_data['date'] - pd.to_datetime(start_date)).dt.days.astype(int)
+        # country_data['days_passed'] = (country_data['date'] - pd.to_datetime(start_date)).values.astype(int)/86400000000000
         
         country_data.to_csv(os.path.join(save_path,f"{cc}_Data.csv"), index = False, header = True)
     
